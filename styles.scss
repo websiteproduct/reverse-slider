@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar,
+.slider {
+    height: 100%;
+}
+
+.slider {
+    position: absolute;
+    left: 35%;
+    top: 0;
+    width: 65%;
+    background-color: #777;
+    transition: transform .5s ease-in-out;
+
+    > div {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.sidebar {
+    width: 35%;
+    background-color: #111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform .5s ease-in-out;
+    
+    > div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+        margin-top: -30px;
+    }
+}
+
+button {
+    background-color: #fff;
+    border: 0;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    z-index: 100;
+    line-height: 0;
+
+    svg {
+        fill: #999;
+    }
+
+    &:hover {
+        svg {
+            fill: #222;
+        }
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.down-button {
+    transform: translateX(-100%);
+    border-radius: 5px 0 0 5px;
+}
+
+.up-button {
+    transform: translateY(-100%);
+    border-radius: 0 5px 5px 0;
+}
